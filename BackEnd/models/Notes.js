@@ -6,5 +6,6 @@ const notesSchema =  mongoose.Schema({
     tag : {type : String,default:'General'},
     date : {type : Date, default: Date.now}
 });
-
-module.exports = mongoose.model('notes',notesSchema)
+const Notes = mongoose.model('notes',notesSchema);
+Notes.createIndexes();
+module.exports = Notes;
