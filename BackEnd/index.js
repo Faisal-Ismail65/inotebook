@@ -1,7 +1,7 @@
 const connectToMongo = require('./connection');
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 5000;
 connectToMongo();
 app.use(express.json());
  app.use('/api/auth',require('./routes/auth'));
