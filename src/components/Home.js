@@ -5,5 +5,4 @@ const Home = () => {
     <h1 className='text-center'>INoteBook</h1>
   )
 }
-
 export default Home
