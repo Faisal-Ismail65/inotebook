@@ -21,7 +21,7 @@ const NoteState = (props) => {
               "__v": 0
             },
             {
-              "_id": "632c46dd481860eb059196db",
+              "_id": "632c46dd481860eb059196b",
               "user": "632b6e84342171c7f1b33f40",
               "title": "note title",
               "description": "this is the first note",
@@ -30,7 +30,7 @@ const NoteState = (props) => {
               "__v": 0
             },
             {
-              "_id": "632c46de481860eb059196dd",
+              "_id": "632c46de481860eb05919dd",
               "user": "632b6e84342171c7f1b33f40",
               "title": "note title",
               "description": "this is the first note",
