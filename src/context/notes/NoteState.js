@@ -11,7 +11,7 @@ const NoteState = (props) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0MWQzODhiOGE0OWQ5ODE2MzFjMTk2In0sImlhdCI6MTY2NTM0MTgzMH0.aLjEqiG7LVIDZFnsK1ZjYj9muQnIwdlzBcxDv9J72d8'
+        'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0MWQzODhiOGE0OWQ5ODE2MzFjMTk2In0sImlhdCI6MTY2NTM4Mjk3NX0.ev_SCgPCEyGS_Idi_F36pF2AcBTGYvuUBE9t8uujaNw'
       },
     });
     const json = await response.json();
@@ -27,18 +27,14 @@ const NoteState = (props) => {
     //api call
     const response = await fetch(`${host}/api/notes/addnote`, {
       method: 'POST',
-      
       headers: {
         'Content-Type': 'application/json',
-        'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0MWQzODhiOGE0OWQ5ODE2MzFjMTk2In0sImlhdCI6MTY2NTM0NzA3OH0.XFH-MGNLU6ilHjuWKiA2ZL6SzkVvlQNKcBLvvR9l0y0'
-      },
-      
+        'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0MWQzODhiOGE0OWQ5ODE2MzFjMTk2In0sImlhdCI6MTY2NTM4Mjk3NX0.ev_SCgPCEyGS_Idi_F36pF2AcBTGYvuUBE9t8uujaNw'
+      }, 
       body: JSON.stringify({title,description,tag}) 
-    })
+    });
     const note = await response.json()
-    // console.log(note);
-  //clientside
-  setNotes(notes.concat(note))
+    setNotes(notes.concat(note))
 };
     
   // delete note
@@ -47,14 +43,13 @@ const NoteState = (props) => {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0MWQzODhiOGE0OWQ5ODE2MzFjMTk2In0sImlhdCI6MTY2NTM0MTgzMH0.aLjEqiG7LVIDZFnsK1ZjYj9muQnIwdlzBcxDv9J72d8'
+        'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0MWQzODhiOGE0OWQ5ODE2MzFjMTk2In0sImlhdCI6MTY2NTM4Mjk3NX0.ev_SCgPCEyGS_Idi_F36pF2AcBTGYvuUBE9t8uujaNw'
       }
     });
     const json = await response.json();
-     console.log(json);
-    // console.log("deleting note with id" + id);
-    let newNote = notes.filter(note => note._id !== id);
-    setNotes(newNote);
+    console.log(json);
+    let newNotes = notes.filter(note => note._id !== id);
+    setNotes(newNotes);
 
   }
 
@@ -66,7 +61,7 @@ const NoteState = (props) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0MWQzODhiOGE0OWQ5ODE2MzFjMTk2In0sImlhdCI6MTY2NTM0MDE3MH0.tMz8wxohmwL0MklxcgNncL61tOFr6bvXNNlag4M3K5I'
+        'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0MWQzODhiOGE0OWQ5ODE2MzFjMTk2In0sImlhdCI6MTY2NTM4Mjk3NX0.ev_SCgPCEyGS_Idi_F36pF2AcBTGYvuUBE9t8uujaNw'
       },
       body: JSON.stringify({title,description,tag})
     });

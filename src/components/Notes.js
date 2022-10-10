@@ -16,12 +16,12 @@ const Notes = () => {
         ref.current.click();
         setNote({id: currentNote._id ,etitle: currentNote.title , edescription : currentNote.description, etag: currentNote.tag});
     }
-    const handleChange = (e) => {
-        setNote({ ...note, [e.target.name]: e.target.value });
-    }
     const handleClick = () => {
         editNote(note.id, note.etitle, note.edescription , note.etag);
         refClose.current.click();
+    }
+    const handleChange = (e) => {
+        setNote({ ...note, [e.target.name]: e.target.value });
     }
     return (
         <>
@@ -52,7 +52,7 @@ const Notes = () => {
                         </div>
                         <div className="modal-footer">
                             <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
+                            <button disabled={note.etitle.length < 5 || note.edescription.length < 5} onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
                         </div>
                     </div>
                 </div>
